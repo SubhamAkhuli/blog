@@ -12,6 +12,9 @@ Route::get('/home', function() {
     return view('home');
 });
 
+// short way to view a page
+Route::view('about', 'about');
+
 Route::get('user', [UserController::class, 'user']);
 
 // This route will accept a parameter and pass it to the controller
