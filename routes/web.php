@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 // Import the UserController
 use App\Http\Controllers\UserController;
 
+// for signup
+use App\Http\Controllers\SignupController;
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,3 +29,7 @@ Route::get('user', [UserController::class, 'user']);
 
 // This route will accept a parameter and pass it to the controller
 Route::get('user/{name}', [UserController::class, 'view']);
+
+// Signup-From 
+Route::view('signup', 'signup-from');
+Route::post('getuserdata', [SignupController::class, 'getUserData']);
